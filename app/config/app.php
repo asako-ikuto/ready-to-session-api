@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://api.ready-to-session.com'),
+    'url' => env('APP_URL', 'https://api.ready-to-session.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
