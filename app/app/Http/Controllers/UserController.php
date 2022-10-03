@@ -21,6 +21,7 @@ class UserController extends Controller
     public function registerScreenName(RegisterScreenNameRequest $request)
     {
         $user = Auth::user();
+        $user->name = $request->name;
         $user->screen_name = $request->screen_name;
         $user->save();
     }
