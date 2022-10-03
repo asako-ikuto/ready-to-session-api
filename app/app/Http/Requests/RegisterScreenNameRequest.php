@@ -30,6 +30,7 @@ class RegisterScreenNameRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required|string|max:50',
             'screen_name' => 'required|string|max:15|min:4|unique:users',
         ];
     }
@@ -37,9 +38,15 @@ class RegisterScreenNameRequest extends FormRequest
     public function messages()
     {
         return [
+            'name.required' => ':attributeは必須項目です',
             'screen_name.required' => ':attributeは必須項目です',
+
+            'name.string' => ':attributeは文字を入力してください',
             'screen_name.string' => ':attributeは文字を入力してください',
+
+            'name.max' => ':attributeは50文字以内です',
             'screen_name.max' => ':attributeは15文字以内です',
+
             'screen_name.min' => ':attributeは4文字以上です',
             'screen_name.unique' => '別の:attributeを入力してください',
         ];
@@ -48,6 +55,7 @@ class RegisterScreenNameRequest extends FormRequest
     public function attributes()
     {
         return [
+            'name' => 'ユーザ名',
             'screen_name' => 'ユーザID',
         ];
     }
