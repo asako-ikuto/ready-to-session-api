@@ -13,7 +13,7 @@ class DropProfileImageFromUsersColumn extends Migration
      */
     public function up()
     {
-        Schema::tabel('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('profile_image');
         });
     }
