@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropProfileImageFromUsersTable extends Migration
+class DropProfileImageFromUsersColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class DropProfileImageFromUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::tabel('users', function (Blueprint $table) {
             $table->dropColumn('profile_image');
         });
     }
@@ -25,7 +25,7 @@ class DropProfileImageFromUsersTable extends Migration
      */
     public function down()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->string('profile_image')->nullable()->comment('プロフィール画像');
         });
     }
